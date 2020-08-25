@@ -1,0 +1,17 @@
+<template>
+    <div class="index">首页</div>
+</template>
+
+<script>
+export default {
+    name: 'index'
+}
+</script>
+
+<style scoped>
+.index {
+    margin: 0;
+}
+
+</style>
+
