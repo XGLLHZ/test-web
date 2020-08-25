@@ -6,7 +6,7 @@ const router = new Router({
     routes: [{
         path: '/',
         name: 'index',
-        component: () => import("../page/index")
+        component: () => import("../view/index")
     }]
 })
 
