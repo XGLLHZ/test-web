@@ -39,7 +39,7 @@
 
 <script>
 export default {
-    name: 'gain'
+    name: 'contact'
 }
 
 </script>
