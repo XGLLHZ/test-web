@@ -51,7 +51,7 @@ export default {
 
 .main {
     margin: 0 15% 0 15%;
-    padding: 60px 0 0 0;
+    padding: 40px 0 0 0;
     width: 70%;
     height: 450px;
 }

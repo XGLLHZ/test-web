@@ -11,10 +11,10 @@
                     <router-link :to="{ path: '/' }">首页</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">新闻中心</router-link>
+                    <router-link :to="{ path: '/news' }">新闻中心</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">学术活动</router-link>
+                    <router-link :to="{ path: '/learn' }">学术活动</router-link>
                 </li>
                 <li>
                     <router-link :to="{ path: '/' }">科技组织</router-link>
@@ -29,7 +29,7 @@
                     <router-link :to="{ path: '/' }">智库成果</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">机构简介</router-link>
+                    <router-link :to="{ path: '/scholar' }">机构简介</router-link>
                 </li>
                 <li>
                     <div class="li-2">
