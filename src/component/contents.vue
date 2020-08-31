@@ -9,7 +9,7 @@
                 </div>
                 <div class="rec-right">
                     <div class="right-1" v-for="(item, index) in dataList" :key="index">
-                        <router-link :to="{ path: '/', query: { id: item.id } }">
+                        <router-link :to="{ path: '/newsinfo', query: { id: item.id } }">
                             <span class="right-1-1">{{ item.title }}</span>
                             <span class="right-1-2">{{ item.label }}</span>
                             <el-divider direction="vertical"></el-divider>

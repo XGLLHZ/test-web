@@ -7,7 +7,7 @@
                     <router-link :to="{ path: '/' }" class="left-main-1">
                         <i class="el-icon-arrow-left"/>&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}
                     </router-link>
-                    <div class="left-main-2" @click="menuClik(item)" v-for="(item, index) in menuName" :key="index">{{ item }}</div>
+                    <div class="left-main-2" @click="menuClik(item.id, item.name)" v-for="(item, index) in menuName" :key="index">{{ item.name }}</div>
                     <div class="left-main-3">
                         <div class="left-main-3-1">联系我们</div>
                         <div class="left-main-3-2">
@@ -31,32 +31,39 @@
                         <div class="main-2-list">
                             <ul>
                                 <li v-for="(item, index) in dataList" :key="index">
-                                    <router-link :to="{ path: '/learninfo', query: { id: item.id } }">
+                                    <router-link :to="{ path: '/achieveinfo', query: { id: item.id } }">
                                         <div class="lis">
                                             <div class="li-a">
                                                 <img :src="item.url"/>
                                             </div>
                                             <div class="li-b">
                                                 <div class="li-b-1">{{ item.title }}</div>
-                                                <div class="li-b-2">{{ item.content }}</div>
+                                                <div class="li-b-2"><span>摘要:&nbsp;&nbsp;</span>{{ item.content }}</div>
                                                 <div class="li-b-3">
-                                                    <span>{{ item.time }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                    <span>{{ item.author }}</span>
+                                                    <div class="li-b-3-1">{{ item.time }}</div>
+                                                    <div class="li-b-3-2"><span>报告人: &nbsp;&nbsp;</span>{{ item.author }}</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </router-link>
                                 </li>
                             </ul>
+                            <div class="list-page">
+                                <el-pagination
+                                    layout="prev, pager, next"
+                                    :total="1000">
+                                </el-pagination>
+                            </div>
                         </div>
                     </div>
-                    <div class="list-page">
-                        <el-pagination
-                            layout="prev, pager, next"
-                            :total="1000">
-                        </el-pagination>
-                    </div>
                     <div class="new-footer">
+                        <div class="footer-1">
+                            <span>分享到:&nbsp;&nbsp;</span>
+                            <img src="../static/wx.png">
+                            <img src="../static/pyq.png">
+                            <img src="../static/qq.png">
+                            <img src="../static/wb.png">
+                        </div>
                         <div class="footer-3">
                             <span>版权所有</span>
                             <el-divider direction="vertical"></el-divider>
@@ -84,7 +91,7 @@
 <script>
 import navbar from '@/component/navbar'
 export default {
-    name: 'learnlist',
+    name: 'scholarlist',
     props: [ 'listTitle', 'listMenu' ],
     components: {
         navbar
@@ -96,29 +103,37 @@ export default {
             menuName: this.listMenu,
             titleName: '',
             dataList: [
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
+                { 
+                    id: 1,
+                    title: '科技组织与公共政策今日赴今日头条调研',
+                    url: require('../static/web-14.jpg'),
+                    content: '是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。',
+                    time: '2020-08-31',
+                    author: '唐某某 教授  叶某某 副教授'
                 },
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
+                { 
+                    id: 1,
+                    title: '科技组织与公共政策今日赴今日头条调研',
+                    url: require('../static/web-14.jpg'),
+                    content: '是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。',
+                    time: '2020-08-31',
+                    author: '唐某某 教授  叶某某 副教授'
                 },
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
+                { 
+                    id: 1,
+                    title: '科技组织与公共政策今日赴今日头条调研',
+                    url: require('../static/web-14.jpg'),
+                    content: '是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。',
+                    time: '2020-08-31',
+                    author: '唐某某 教授  叶某某 副教授'
                 },
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
-                },
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
-                },
-                { id: 1, title: '科技组织与公共政策研究院2020赴今日头条调研', url: require('../static/web-06.jpg'), 
-                    content: '是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢',
-                    time: '2020-08-31', author: 'xgllhz'
+                { 
+                    id: 1,
+                    title: '科技组织与公共政策今日赴今日头条调研',
+                    url: require('../static/web-14.jpg'),
+                    content: '是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。是非成败转头空，青山依旧在，惯看秋月春风。',
+                    time: '2020-08-31',
+                    author: '唐某某 教授  叶某某 副教授'
                 }
             ]
         }
@@ -131,11 +146,11 @@ export default {
     methods: {
         initTitle() {
             if (this.menuName != null) {
-                this.titleName = this.menuName[0]
+                this.titleName = this.menuName[0].name
             }
         },
 
-        menuClik(name) {
+        menuClik(id, name) {
             this.titleName = name
         }
 
@@ -279,18 +294,30 @@ export default {
     border-top: 1px solid black;
 }
 
+.main-2-college {
+    margin: 30px 0 30px 0;
+    padding: 0;
+    width: 100%;
+}
+
+.main-2-organization {
+    margin: 30px 0 30px 0;
+    padding: 0;
+    width: 100%;
+}
+
 .main-2-list {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 750px;
+    height: 700px;
 }
 
 .main-2-list ul {
     margin: 30px 0 30px 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 85%;
     list-style: none;
 }
 
@@ -298,7 +325,7 @@ export default {
     margin: 0;
     padding: 0 0 20px 0;
     width: 100%;
-    height: 14%;
+    height: 23%;
 }
 
 .main-2-list ul li a {
@@ -320,7 +347,7 @@ export default {
 .li-a {
     margin: 0;
     padding: 0;
-    width: 20%;
+    width: 17%;
     height: 100%;
     float: left;
     overflow: hidden;
@@ -333,7 +360,7 @@ export default {
 .li-b {
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 83%;
     height: 100%;
     float: right;
 }
@@ -356,8 +383,12 @@ export default {
     text-overflow: ellipsis;
     display: -webkit-box; 
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; 
+    -webkit-line-clamp: 4; 
     line-height: 150%;
+}
+
+.li-b-2 span {
+    color: #999;
 }
 
 .li-b-3 {
@@ -368,11 +399,24 @@ export default {
     color: #AAAAAA;
 }
 
+.li-b-3-1 {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    float: left;
+}
+
+.li-b-3-2 {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    float: right;
+}
+
 .list-page {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 50px;
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
@@ -382,10 +426,20 @@ export default {
     margin: 30px 0 0 0;
     padding: 30px 0 0 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: #0C153C;
     color: white;
     font-size: 12px;
+}
+
+.footer-1 {
+    padding-right: 30px;
+    float: right;
+}
+
+.footer-1 img {
+    width: 15px;
+    padding-left: 15px;
 }
 
 .footer-3 {
@@ -398,6 +452,10 @@ export default {
 }
 
 </style>
+
+
+
+
 
 
 

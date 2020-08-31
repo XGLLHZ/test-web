@@ -23,10 +23,10 @@
                     <router-link :to="{ path: '/' }">公共政策</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">专题报道</router-link>
+                    <router-link :to="{ path: '/report' }">专题报道</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">智库成果</router-link>
+                    <router-link :to="{ path: '/achieve' }">智库成果</router-link>
                 </li>
                 <li>
                     <router-link :to="{ path: '/scholar' }">机构简介</router-link>

@@ -6,22 +6,22 @@
             <div class="c">
                 <ul>
                     <li>
-                        <router-link :to="{ path: '/', query: { id: 1 } }">
+                        <router-link :to="{ path: '/achieveinfo', query: { id: 1 } }">
                             <img src="../static/web-11.jpg"/>
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ path: '/', query: { id: 2 } }">
+                        <router-link :to="{ path: '/achieveinfo', query: { id: 2 } }">
                             <img src="../static/web-12.jpg"/>
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ path: '/', query: { id: 3 } }">
+                        <router-link :to="{ path: '/achieveinfo', query: { id: 3 } }">
                             <img src="../static/web-13.jpg"/>
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ path: '/', query: { id: 4 } }">
+                        <router-link :to="{ path: '/achieveinfo', query: { id: 4 } }">
                             <img src="../static/web-14.jpg"/>
                         </router-link>
                     </li>

@@ -6,13 +6,13 @@
                     <div class="main-top">
                         <div class="top-left">新闻中心</div>
                         <div class="top-right">
-                            <router-link :to="{ path: '/' }">更多>>></router-link>
+                            <router-link :to="{ path: '/news' }">更多>>></router-link>
                         </div>
                     </div>
                     <div class="main-bottom-1">
                         <ul>
                             <li v-for="(item, index) in newList" :key="index">
-                                <router-link :to="{ path: '/', query: { id: item.id } }">
+                                <router-link :to="{ path: '/newsinfo', query: { id: item.id } }">
                                     <div class="new-left">{{ item.title }}</div>
                                     <div class="new-right">{{ item.time }}</div>
                                 </router-link>
@@ -24,13 +24,13 @@
                     <div class="main-top">
                         <div class="top-left">学术活动</div>
                         <div class="top-right">
-                            <router-link :to="{ path: '/' }">更多>>></router-link>
+                            <router-link :to="{ path: '/learn' }">更多>>></router-link>
                         </div>
                     </div>
                     <div class="main-bottom">
                         <ul>
                             <li v-for="(item, index) in dataList" :key="index">
-                                <router-link :to="{ path: '/', query: { id: item.id } }">
+                                <router-link :to="{ path: '/learninfo', query: { id: item.id } }">
                                     <div class="right-con">
                                         <div class="right-con-left">
                                             <div class="date-1">{{ item.day }}</div>

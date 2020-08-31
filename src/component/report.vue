@@ -6,7 +6,7 @@
             <div class="c">
                 <ul>
                     <li v-for="(item, index) in dataList" :key="index">
-                        <router-link :to="{ path: '/', query: { id: item.id } }" style="text-decoration: none; color: black">
+                        <router-link :to="{ path: '/reportinfo', query: { id: item.id } }" style="text-decoration: none; color: black">
                             <div class="lia">
                                 <div class="lia-a">
                                     <img :src="item.url"/>
@@ -19,7 +19,7 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ path: '/', query: { id: 2 } }">
+                        <router-link :to="{ path: '/report', query: { id: 2 } }">
                             <div class="lia">
                                 <img src="../static/web-10.jpg"/>
                             </div>

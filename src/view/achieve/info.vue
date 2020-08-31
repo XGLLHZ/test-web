@@ -3,13 +3,13 @@
         <navbar></navbar>
         <div class="separator">
             <div class="separator-1">
-                <span class="span-1">新闻中心</span>
+                <span class="span-1">智库成果</span>
                 <span class="span-2">当前位置: &nbsp;&nbsp;</span>
             </div>
             <div class="separator-2">
                 <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/news' }">新闻中心</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/news' }">智库成果</el-breadcrumb-item>
                     <el-breadcrumb-item>正文</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
@@ -26,7 +26,7 @@
 <script>
 import navbar from '@/component/navbar'
 export default {
-    name: 'newsinfo',
+    name: 'achieveinfo',
     components: {
         navbar
     }
@@ -116,6 +116,10 @@ export default {
 }
 
 </style>
+
+
+
+
 
 
 

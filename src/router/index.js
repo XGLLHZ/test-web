@@ -25,6 +25,31 @@ const router = new Router({
             component: () => import("../view/learn/index")
         },
         {
+            path: '/learninfo',
+            name: 'learninfo',
+            component: () => import("../view/learn/info")
+        },
+        {
+            path: '/achieve',
+            name: 'achieve',
+            component: () => import("../view/achieve/index")
+        },
+        {
+            path: '/achieveinfo',
+            name: 'achieveinfo',
+            component: () => import("../view/achieve/info")
+        },
+        {
+            path: '/report',
+            name: 'report',
+            component: () => import("../view/report/index")
+        },
+        {
+            path: '/reportinfo',
+            name: 'reportinfo',
+            component: () => import("../view/report/info")
+        },
+        {
             path: '/scholar',
             name: 'scholar',
             component: () => import("../view/scholar/index")
