@@ -20,6 +20,11 @@ const router = new Router({
             component: () => import("../view/news/info")
         },
         {
+            path: '/newsreportinfo',
+            name: 'newsreportinfo',
+            component: () => import("../view/news/report-info")
+        },
+        {
             path: '/learn',
             name: 'learn',
             component: () => import("../view/learn/index")
@@ -28,6 +33,26 @@ const router = new Router({
             path: '/learninfo',
             name: 'learninfo',
             component: () => import("../view/learn/info")
+        },
+        {
+            path: '/technology',
+            name: 'technology',
+            component: () => import("../view/technology/index")
+        },
+        {
+            path: '/technologyinfo',
+            name: 'technologyinfo',
+            component: () => import("../view/technology/info")
+        },
+        {
+            path: '/policy',
+            name: 'policy',
+            component: () => import("../view/policy/index")
+        },
+        {
+            path: '/policyinfo',
+            name: 'policyinfo',
+            component: () => import("../view/policy/info")
         },
         {
             path: '/achieve',

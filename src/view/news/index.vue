@@ -15,7 +15,10 @@ export default {
     data() {
         return {
             listTitle: '新闻通告',
-            listMenu: [ '新闻中心', '通知公告' ]
+            listMenu: [
+                { id: 1, name: '新闻中心' },
+                { id: 2, name: '通知公告' }
+            ]
         }
     }
 

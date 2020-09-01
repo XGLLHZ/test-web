@@ -17,10 +17,10 @@
                     <router-link :to="{ path: '/learn' }">学术活动</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">科技组织</router-link>
+                    <router-link :to="{ path: '/technology' }">科技组织</router-link>
                 </li>
                 <li>
-                    <router-link :to="{ path: '/' }">公共政策</router-link>
+                    <router-link :to="{ path: '/policy' }">公共政策</router-link>
                 </li>
                 <li>
                     <router-link :to="{ path: '/report' }">专题报道</router-link>

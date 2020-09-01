@@ -31,7 +31,7 @@
                         <div class="main-2-list">
                             <ul>
                                 <li v-for="(item, index) in dataList" :key="index">
-                                    <router-link :to="{ path: '/achieveinfo', query: { id: item.id } }">
+                                    <router-link :to="{ path: '/reportinfo', query: { id: item.id } }">
                                         <div class="lis">
                                             <div class="li-a">
                                                 <img :src="item.url"/>
@@ -91,7 +91,7 @@
 <script>
 import navbar from '@/component/navbar'
 export default {
-    name: 'scholarlist',
+    name: 'reportlist',
     props: [ 'listTitle', 'listMenu' ],
     components: {
         navbar

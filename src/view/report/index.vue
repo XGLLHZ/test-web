@@ -7,7 +7,7 @@
 <script>
 import reportlist from '@/component/report-list'
 export default {
-    name: 'scholar',
+    name: 'report',
     components: {
         reportlist
     },

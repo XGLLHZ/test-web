@@ -7,7 +7,7 @@
                     <router-link :to="{ path: '/' }" class="left-main-1">
                         <i class="el-icon-arrow-left"/>&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}
                     </router-link>
-                    <div class="left-main-2" @click="menuClik(item)" v-for="(item, index) in menuName" :key="index">{{ item }}</div>
+                    <div class="left-main-2" @click="menuClik(item.id, item.name)" v-for="(item, index) in menuName" :key="index">{{ item.name }}</div>
                     <div class="left-main-3">
                         <div class="left-main-3-1">联系我们</div>
                         <div class="left-main-3-2">
@@ -28,7 +28,8 @@
                 <div class="right-main">
                     <div class="main-1">{{ titleName }}</div>
                     <div class="main-2">
-                        <newList></newList>
+                        <newList v-show="newListVisible"></newList>
+                        <newListReport v-show="newListReportVisible"></newListReport>
                     </div>
                 </div>
             </div>
@@ -39,16 +40,20 @@
 <script>
 import navbar from '@/component/navbar'
 import newList from '@/component/new-list'
+import newListReport from '@/component/new-list-report'
 export default {
     name: 'conlist',
     props: [ 'listTitle', 'listMenu' ],
     components: {
         navbar,
-        newList
+        newList,
+        newListReport
     },
 
     data() {
         return {
+            newListVisible: true,
+            newListReportVisible: false,
             title: this.listTitle,
             menuName: this.listMenu,
             titleName: ''
@@ -62,12 +67,20 @@ export default {
     methods: {
         initTitle() {
             if (this.menuName != null) {
-                this.titleName = this.menuName[0]
+                this.titleName = this.menuName[0].name
             }
         },
 
-        menuClik(name) {
+        menuClik(id, name) {
             this.titleName = name
+            if (id === 1) {
+                this.newListVisible = true
+                this.newListReportVisible = false
+            }
+            if (id === 2) {
+                this.newListVisible = false
+                this.newListReportVisible = true
+            }
         }
 
     }
