@@ -10,29 +10,44 @@ const router = new Router({
             component: () => import("../view/index")
         },
         {
-            path: '/news',
-            name: 'news',
-            component: () => import("../view/news/index")
+            path: '/news/new',
+            name: 'newsnew',
+            component: () => import("../view/news/new/index")
         },
         {
-            path: '/newsinfo',
-            name: 'newsinfo',
-            component: () => import("../view/news/info")
+            path: '/news/newinfo',
+            name: 'newinfo',
+            component: () => import("../view/news/new/info")
         },
         {
-            path: '/newsreportinfo',
+            path: '/news/report',
+            name: 'newsreport',
+            component: () => import("../view/news/report/index")
+        },
+        {
+            path: '/news/reportinfo',
             name: 'newsreportinfo',
-            component: () => import("../view/news/report-info")
+            component: () => import("../view/news/report/info")
         },
         {
-            path: '/learn',
-            name: 'learn',
-            component: () => import("../view/learn/index")
+            path: '/learn/dynamic',
+            name: 'learndynamic',
+            component: () => import("../view/learn/dynamic/index")
         },
         {
-            path: '/learninfo',
-            name: 'learninfo',
-            component: () => import("../view/learn/info")
+            path: '/learn/dynamicinfo',
+            name: 'dynamicinfo',
+            component: () => import("../view/learn/dynamic/info")
+        },
+        {
+            path: '/learn/meeting',
+            name: 'learnmeeting',
+            component: () => import("../view/learn/meeting/index")
+        },
+        {
+            path: '/learn/meetinginfo',
+            name: 'meetinginfo',
+            component: () => import("../view/learn/meeting/info")
         },
         {
             path: '/technology',
@@ -55,16 +70,6 @@ const router = new Router({
             component: () => import("../view/policy/info")
         },
         {
-            path: '/achieve',
-            name: 'achieve',
-            component: () => import("../view/achieve/index")
-        },
-        {
-            path: '/achieveinfo',
-            name: 'achieveinfo',
-            component: () => import("../view/achieve/info")
-        },
-        {
             path: '/report',
             name: 'report',
             component: () => import("../view/report/index")
@@ -75,9 +80,39 @@ const router = new Router({
             component: () => import("../view/report/info")
         },
         {
-            path: '/scholar',
-            name: 'scholar',
-            component: () => import("../view/scholar/index")
+            path: '/achieve/viewpoint',
+            name: 'achieveviewpoint',
+            component: () => import("../view/achieve/viewpoint/index")
+        },
+        {
+            path: '/achieve/viewpointinfo',
+            name: 'viewpointinfo',
+            component: () => import("../view/achieve/viewpoint/info")
+        },
+        {
+            path: '/achieve/report',
+            name: 'achievereport',
+            component: () => import("../view/achieve/report/index")
+        },
+        {
+            path: '/achieve/reportinfo',
+            name: 'achievereportinfo',
+            component: () => import("../view/achieve/report/info")
+        },
+        {
+            path: '/scholar/scholar',
+            name: 'scholarscholar',
+            component: () => import("../view/scholar/scholar/index")
+        },
+        {
+            path: '/scholar/college',
+            name: 'scholarcollege',
+            component: () => import("../view/scholar/college/index")
+        },
+        {
+            path: '/scholar/organization',
+            name: 'scholarorganization',
+            component: () => import("../view/scholar/organization/index")
         }
     ]
 })

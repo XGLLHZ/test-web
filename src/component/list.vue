@@ -7,7 +7,7 @@
                     <router-link :to="{ path: '/' }" class="left-main-1">
                         <i class="el-icon-arrow-left"/>&nbsp;&nbsp;&nbsp;&nbsp;{{ title }}
                     </router-link>
-                    <div class="left-main-2" @click="menuClik(item.id, item.name)" v-for="(item, index) in menuName" :key="index">{{ item.name }}</div>
+                    <div class="left-main-2" @click="menuClik(item.id, item.name, item.path)" v-for="(item, index) in menuName" :key="index">{{ item.name }}</div>
                     <div class="left-main-3">
                         <div class="left-main-3-1">联系我们</div>
                         <div class="left-main-3-2">
@@ -66,21 +66,19 @@ export default {
 
     methods: {
         initTitle() {
-            if (this.menuName != null) {
-                this.titleName = this.menuName[0].name
-            }
-        },
-
-        menuClik(id, name) {
-            this.titleName = name
-            if (id === 1) {
+            this.titleName = this.$route.query.name
+            if (this.$route.query.id === '1') {
                 this.newListVisible = true
                 this.newListReportVisible = false
             }
-            if (id === 2) {
+            if (this.$route.query.id === '2') {
                 this.newListVisible = false
                 this.newListReportVisible = true
             }
+        },
+
+        menuClik(id, name, path) {
+            this.$router.push({ path: path, query: { id: id, name: name } })
         }
 
     }

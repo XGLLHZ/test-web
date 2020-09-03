@@ -3,13 +3,14 @@
         <navbar></navbar>
         <div class="separator">
             <div class="separator-1">
-                <span class="span-1">科技组织</span>
+                <span class="span-1">学术活动</span>
                 <span class="span-2">当前位置: &nbsp;&nbsp;</span>
             </div>
             <div class="separator-2">
                 <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/technology' }">科技组织</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/learn/dynamic', query: { id: '1', name: '学术动态' } }">学术活动</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/learn/meeting', query: { id: '2', name: '学术会议' } }">学术会议</el-breadcrumb-item>
                     <el-breadcrumb-item>正文</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
@@ -26,7 +27,7 @@
 <script>
 import navbar from '@/component/navbar'
 export default {
-    name: 'technologyinfo',
+    name: 'learninfo',
     components: {
         navbar
     }
@@ -51,7 +52,7 @@ export default {
 .separator-1 {
     margin: 0;
     padding: 0;
-    width: 83%;
+    width: 75%;
     height: 100%;
     float: left;
 }
@@ -71,7 +72,7 @@ export default {
 .separator-2 {
     margin: 0;
     padding: 0;
-    width: 17%;
+    width: 25%;
     height: 100%;
     float: right;
     justify-content:center;
@@ -116,7 +117,6 @@ export default {
 }
 
 </style>
-
 
 
 

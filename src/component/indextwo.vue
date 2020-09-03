@@ -6,13 +6,13 @@
                     <div class="main-top">
                         <div class="top-left">科技组织</div>
                         <div class="top-right">
-                            <router-link :to="{ path: '/' }">更多>>></router-link>
+                            <router-link :to="{ path: '/technology' }">更多>>></router-link>
                         </div>
                     </div>
                     <div class="main-bottom">
                         <ul>
                             <li v-for="(item, index) in dataList" :key="index">
-                                <router-link :to="{ path: '/', query: { id: item.id } }">{{ item.title }}</router-link>
+                                <router-link :to="{ path: '/technologyinfo', query: { id: item.id } }">{{ item.title }}</router-link>
                             </li>
                         </ul>
                     </div>
@@ -21,13 +21,13 @@
                     <div class="main-top">
                         <div class="top-left">公共政策</div>
                         <div class="top-right">
-                            <router-link :to="{ path: '/' }">更多>>></router-link>
+                            <router-link :to="{ path: '/policy' }">更多>>></router-link>
                         </div>
                     </div>
                     <div class="main-bottom">
                         <ul>
                             <li v-for="(item, index) in dataList" :key="index">
-                                <router-link :to="{ path: '/', query: { id: item.id } }">{{ item.title }}</router-link>
+                                <router-link :to="{ path: '/policyinfo', query: { id: item.id } }">{{ item.title }}</router-link>
                             </li>
                         </ul>
                     </div>

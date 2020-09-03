@@ -9,7 +9,7 @@
             <div class="separator-2">
                 <el-breadcrumb separator-class="el-icon-arrow-right">
                     <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/news' }">公共政策</el-breadcrumb-item>
+                    <el-breadcrumb-item :to="{ path: '/policy' }">公共政策</el-breadcrumb-item>
                     <el-breadcrumb-item>正文</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>

@@ -11,7 +11,7 @@
             </el-carousel>
         </div>
         <div class="list-search">
-            <el-input placeholder="请输入您想要查找的新闻内容......" v-model="input3" class="input-with-select">
+            <el-input placeholder="请输入您想要查找的新闻内容......" v-model="searchHot" class="input-with-select">
                 <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
         </div>
@@ -28,7 +28,7 @@
         <div class="list-new">
             <ul>
                 <li v-for="(item, index) in dataList" :key="index">
-                    <router-link :to="{ path: '/newsinfo', query: { id: item.id } }">
+                    <router-link :to="{ path: '/news/newinfo', query: { id: item.id } }">
                         <span class="li-a">{{ item.title }}</span>
                         <span class="li-b">{{ item.time }}</span>
                     </router-link>
@@ -80,6 +80,7 @@ export default {
 
     data() {
         return {
+            searchHot: '',
             monthList: [
                 { id: '1', value: '一月' },
                 { id: '2', value: '二月' },

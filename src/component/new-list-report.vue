@@ -4,7 +4,7 @@
             <ul>
                 <li v-for="(item, index) in dataList" :key="index">
                     <div class="lis">
-                        <router-link :to="{ path: '/newsreportinfo', query: { id: item.id } }">
+                        <router-link :to="{ path: '/news/reportinfo', query: { id: item.id } }">
                             <div class="li-a">{{ item.title }}</div>
                         </router-link>
                         <div class="li-b">
